@@ -1,0 +1,659 @@
+/* GENERAL & BASE STYLES */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Universal selector - resets margin, padding, and sets box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85);
+}
+
+/* TRANSITION to smoothly change css*/
+a,
+.btn {
+    transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+nav,
+.nav-links {
+    display: flex; /*manage alignment and spacing*/
+}
+
+/* Main navigation bar styling*/
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation links list styling */
+.nav-links {
+    gap: 2rem; /* Space between navigation items */
+    list-style: none; /* Remove bullet points */
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Default link styling */
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+/* Link hover effect */
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 1rem; /* Space between text and underline */
+    text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+/* Change cursor to default when hovering logo (not clickable) */
+.logo:hover {
+    cursor: default;
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+    display: none;
+}
+
+/* Hamburger menu container */
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hamburger icon - three horizontal lines */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column; /*controls whether items flow row or col*/
+    justify-content: space-between; /*defines how items are spaced*/
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3s ease-in-out; /* Smooth animation when opening */
+}
+
+/* Mobile menu links container - hidden by default */
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+/* Mobile menu link styling */
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Remove bullet points from mobile menu items */
+.menu-links li {
+    list-style: none;
+}
+
+/* Expands menu when open class is added */
+.menu-links.open {
+    max-height: 300px;
+}
+
+/* Transforms first line of hamburger into X (top part) */
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(5px, 5px); /*changes shape or position*/
+}
+
+/* Hides middle line of hamburger when open */
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Transforms last line of hamburger into X (bottom part) */
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Main content wrapper*/
+.main-content {
+    flex: 1;
+    width: 100%;
+}
+
+/* SECTIONS */
+section {
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: auto;
+    padding-bottom: 5rem;
+    padding-top: 20vh;
+}
+
+.section-container {
+    display: flex;
+}
+
+/* Profile section with gradient background */
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    min-height: 80vh;
+    align-items: center;
+    /*Gradient to smooth transititon between colors */
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+/* Profile picture container */
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-weight: 600;
+}
+
+.section__text__p1 {
+    text-align: center;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* PSEUDO ELEMENT to style specific parts without changing structure*/
+.title::after {
+    /* Adds a colored underline graphic below the main section title */
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #667eea;
+    margin: 10px auto;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
+    height: 2rem;
+}
+
+/* Icons (Negation Pseudo Class to select elements that doesnt match certain selector) */
+.icon:not(.arrow):hover {
+    transform: scale(1.1);/* Scale effect on hover for all icons*/
+}
+
+/* Button container - centers buttons with spacing */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+    border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+/* Pointer cursor on button hover */
+.btn-color-1:hover,
+.btn-color-2:hover {
+    cursor: pointer;
+}
+
+.btn-color-1 {
+    background: rgb(53, 53, 53);
+    color: white;
+}
+
+.btn-color-1:hover {
+    background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+    background: none;
+}
+
+.btn-color-2:hover {
+    background: rgb(53, 53, 53);
+    color: white;
+    border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+/*About section*/
+/* Styling for the individual boxes */
+.details-container {
+    padding: 1.5rem;
+    flex: 1; /* Allows boxes to stretch horizontally within their parent */
+    background: white;
+    border: 0.1rem solid rgb(163, 163, 163);
+    border-radius: 1rem; /* Rounded corners for the box */
+    text-align: center;
+}
+
+/* Styling for the container that holds the two boxes side-by-side */
+.about-containers { 
+    display: flex; /* Arranges boxes horizontally */
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+/* BLOG SECTION*/
+#blog {
+    position: relative;
+    min-height: auto;
+    padding-bottom: 3rem;
+}
+
+/* Grid layout for blog posts */
+.blog-posts-container {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.blog-post {
+    background: white;
+    border: 0.1rem solid rgb(163, 163, 163);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+/* Pseudo Element for content */
+.blog-post h2::before {
+    content: "📝 ";
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);/* Moves card up slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);/* Adds shadow for depth */
+    border-color: rgb(53, 53, 53);/* Darkens border */
+}
+
+.read-more {
+    color: rgb(53, 53, 53);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* PROJECTS SECTION*/
+/* Structure selectors to style based on position*/
+.project-card:nth-child(odd) {
+    background-color: #f8f9fa;/* Light gray for odd cards */
+}
+
+.projects-container {
+    display: grid;
+    /* Arranges cards, keeping a min width of 350px for each */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: white;
+    border: 0.1rem solid rgb(163, 163, 163); 
+    border-radius: 1rem;
+    padding: 2rem;
+    
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    
+    /* fade in animations on page load*/
+    animation: fadeInUp 0.6s ease-out; 
+}
+
+/* Transforms and adds shadow */
+.project-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: rgb(53, 53, 53);
+}
+
+/* Styling for the tech tags inside the box */
+.project-tech {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap; /*allow items to wrap into multiple lines*/
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background: rgb(240, 240, 240);
+    color: rgb(85, 85, 85);
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;/* Rounded pill shape */
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Fade-in from bottom animation for project cards for complex movements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);/* Starts 30px below */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);/* Ends at normal position */
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* CONTACT SECTION */
+#contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 70vh;
+    padding-top: 22vh;
+    margin-top: 0;
+}
+
+/* Contact Form container */
+.contact-section {
+    max-width: 500px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Contact form styling */
+.contact-section form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 0.1rem solid rgb(163, 163, 163);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Form label styling */
+.contact-section label {
+    font-weight: 500;
+    color: rgb(53, 53, 53);
+    margin-bottom: 0.5rem;
+}
+
+/* Relational Selector - adds spacing between label and input */
+label + input,
+label + textarea {
+    margin-top: 0.5rem;
+}
+
+/* Attribute Selectors - to target elements of specific attri */
+input[type="text"],
+input[type="email"] {
+    border: 2px solid #ddd;
+}
+
+/* Red left border for required fields */
+input[required] {
+    border-left: 3px solid #ff6b6b;
+}
+
+/* General input and textarea styling */
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.1rem solid rgb(163, 163, 163);
+    border-radius: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+/* Validity Pseudo Class to style based on user interacts */
+input:valid {
+    border-color: #51cf66;
+}
+
+/* Red border for invalid inputs (when filled out) */
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: #ff6b6b;
+}
+
+/* Focus state for inputs - dark border */
+.contact-section input:focus,
+.contact-section textarea:focus {
+    outline: none;
+    border-color: rgb(53, 53, 53);
+}
+
+.contact-section textarea {
+    resize: vertical;/* Allows vertical resizing only */
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: rgb(53, 53, 53);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms ease;
+    margin-top: 1rem;
+}
+
+/* Keyframe animation - pulse effect for button */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }/* Normal size */
+    50% { transform: scale(1.02); }/* Slightly larger */
+}
+
+/* Submit button hover - black background with pulse animation */
+.submit-btn:hover {
+    background: rgb(0, 0, 0);
+    animation: pulse 1s infinite;
+}
+
+/* FOOTER*/
+footer {
+    /* Gradient from dark grey to medium grey*/
+    background: linear-gradient(90deg, #495057 0%, #6c757d 100%);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN - MOBILE BREAKPOINT (768px and below) */
+@media screen and (max-width: 768px) {
+    /* Mobile Navigation */
+    #desktop-nav {
+        display: none;
+    }
+
+    #hamburger-nav {
+        display: flex;
+    }
+
+    /* Reduce section margins for mobile - uses specificity to override */
+    section {
+        margin: 0 1rem; 
+        padding-top: 15vh;
+        padding-bottom: 3rem;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    /* Profile Section vertically */
+    #profile {
+        flex-direction: column;
+        min-height: auto;
+        gap: 2rem;
+        padding-bottom: 3rem;
+        padding-top: 20vh;
+    }
+    .profile-pic { 
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Prevents stretching */
+        border-radius: 50%;
+    }
+
+    .section__pic-container {
+        height: 300px;
+        width: 300px;
+    }
+
+    .section__text__p2 {
+        font-size: 1.5rem;
+    }
+
+    /* About & Experience vertically */
+    .section-container {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: auto;
+    }
+
+    .about-containers {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .experience-details-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .article-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    article {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .details-container.color-container {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    /* Contact Section Mobile Adjustments */
+    .contact-info-upper-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    /* Project Card in single column */
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-btn {
+        width: 150px;
+    }
+}

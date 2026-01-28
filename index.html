@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Rimaz Nowfel - Home</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="main-content">
+        <nav id="desktop-nav">
+            <div class="logo">Rimaz Nowfel</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <nav id="hamburger-nav">
+            <div class="logo">Rimaz Nowfel</div>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-links">
+                    <ul> <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                        <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                        <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                        <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+                    </ul> </div>
+            </div>
+        </nav>
+        
+        <section id="profile">
+            <div class="section__pic-container">
+                <img
+                src="./assets/profile-pic.png"
+                alt="Rimaz Nowfel profile picture"
+                class="profile-pic"
+                > 
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1">Hello, I'm</p>
+                <h1 class="title">Rimaz Nowfel</h1>
+                <p class="section__text__p2">Fullstack Developer</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="window.open('./assets/cv.pdf')">
+                        Download CV
+                    </button>
+                    <button class="btn btn-color-1" onclick="location.href='./contact.html'">
+                        Contact Info
+                    </button>
+                </div>
+                <div id="socials-container">
+                    <img
+                        src="./assets/linkedin.png"
+                        alt="LinkedIn Profile"
+                        class="icon"
+                        onclick="location.href='https://www.linkedin.com/in/rimaz-nowfel/'"
+                    >
+                    <img
+                        src="./assets/github.png"
+                        alt="My Github Profile"
+                        class="icon"
+                        onclick="location.href='https://github.com/Rimy14'"
+                    >
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Copyright &#169; 2025 Rimaz Nowfel. All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

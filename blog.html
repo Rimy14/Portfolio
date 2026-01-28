@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Blog - Rimaz Nowfel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">Rimaz Nowfel</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <nav id="hamburger-nav">
+        <div class="logo">Rimaz Nowfel</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                    <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                    <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="main-content">
+        <section id="blog">
+            <p class="section__text__p1">Read My</p>
+            <h1 class="title">Blog Posts</h1>
+            
+            <div class="blog-posts-container">
+                <div class="blog-post">
+                    <h2>Getting Started with Web Development</h2>
+                    <p class="post-date">January 15, 2024</p>
+                    <p>
+                        Learn the fundamentals of web development 
+                        and how to start your journey as a fullstack developer...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                
+                <div class="blog-post">
+                    <h2>Building Responsive Web Designs</h2>
+                    <p class="post-date">November 20, 2023</p>
+                    <p>
+                        Best practices and techniques for creating websites 
+                        that work perfectly on all devices...
+                    </p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <p class="section__text__p1">Browse My Recent</p>
+            <h1 class="title">Projects</h1>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">Personal Finance Tracker</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">OOP</span>
+                    </div>
+                    <p class="project-description">
+                        Web application for tracking income/expenses with 
+                        dashboard summaries and categorized transactions.
+                    </p>
+                    <br> 
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Traffic Flow Analysis System</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        Program analyzing CSV traffic data, generating insights, 
+                        and visualizations using histograms.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">XYZ Construction Information System</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        System to monitor project progress, 
+                        track resource allocation, and optimize workflow.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Percolation Simulation</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        Simulation tool generating random grids to 
+                        test water flow and output results to text files.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Life on Land Website</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Designed team and feedback pages for an environmental awareness website.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Clothing Platform</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <p class="project-description">
+                        A responsive clothing web application designed to showcase stylish apparel.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Personal Portfolio</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Web application to showcase my skills and projects 
+                        with modern responsive design.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div> 
+
+    <footer>
+        <p>Copyright &#169; 2025 Rimaz Nowfel. All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
