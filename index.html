@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Rimaz Nowfel - Home</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rimaz Nowfel - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-    <div class="main-content">
-        <nav id="desktop-nav">
-            <div class="logo">Rimaz Nowfel</div>
-            <div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+    <!-- DESKTOP NAVIGATION -->
+    <nav id="desktop-nav">
+        <div class="logo">Rimaz Nowfel</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#profile">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HAMBURGER NAVIGATION (Mobile) -->
+    <nav id="hamburger-nav">
+        <div class="logo">Rimaz Nowfel</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
                 </ul>
             </div>
-        </nav>
-        
-        <nav id="hamburger-nav">
-            <div class="logo">Rimaz Nowfel</div>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="menu-links">
-                    <ul> <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
-                        <li><a href="about.html" onclick="toggleMenu()">About</a></li>
-                        <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
-                        <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
-                    </ul> </div>
-            </div>
-        </nav>
-        
+        </div>
+    </nav>
+
+    <div class="main-content">
+
+        <!-- ==================== HOME / PROFILE SECTION ==================== -->
         <section id="profile">
             <div class="section__pic-container">
-                <img
-                src="./assets/profile-pic.png"
-                alt="Rimaz Nowfel profile picture"
-                class="profile-pic"
-                > 
+                <img src="./assets/profile-pic.png" alt="Rimaz Nowfel profile picture" class="profile-pic">
             </div>
             <div class="section__text">
                 <p class="section__text__p1">Hello, I'm</p>
@@ -52,26 +60,258 @@
                     <button class="btn btn-color-2" onclick="window.open('./assets/cv.pdf')">
                         Download CV
                     </button>
-                    <button class="btn btn-color-1" onclick="location.href='./contact.html'">
+                    <button class="btn btn-color-1"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                         Contact Info
                     </button>
                 </div>
                 <div id="socials-container">
-                    <img
-                        src="./assets/linkedin.png"
-                        alt="LinkedIn Profile"
-                        class="icon"
-                        onclick="location.href='https://www.linkedin.com/in/rimaz-nowfel/'"
-                    >
-                    <img
-                        src="./assets/github.png"
-                        alt="My Github Profile"
-                        class="icon"
-                        onclick="location.href='https://github.com/Rimy14'"
-                    >
+                    <img src="./assets/linkedin.png" alt="LinkedIn Profile" class="icon"
+                        onclick="location.href='https://www.linkedin.com/in/rimaz-nowfel/'">
+                    <img src="./assets/github.png" alt="My Github Profile" class="icon"
+                        onclick="location.href='https://github.com/Rimy14'">
                 </div>
             </div>
         </section>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About Me</h1>
+
+            <div class="section-container">
+                <div class="about-details-container">
+                    <div class="about-containers">
+                        <div class="details-container">
+                            <img src="./assets/experience.png" alt="Experience Icon" class="icon">
+                            <h3>Experience</h3>
+                            <p>2+ years <br> Frontend Development</p>
+                        </div>
+                        <div class="details-container">
+                            <img src="./assets/education.png" alt="Education Icon" class="icon">
+                            <h3>Education</h3>
+                            <p>BSc(Hons) Computer Science</p>
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <p>
+                            I'm a Computer Science student with hands-on experience in Java,
+                            Python, HTML, CSS, and JavaScript. I enjoy designing responsive
+                            web applications, building reliable backend systems, and working
+                            with databases to create seamless user experiences. I'm driven to
+                            learn continuously and contribute to meaningful projects in the
+                            tech industry. Let's connect and collaborate!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCE SECTION ==================== -->
+        <section id="experience">
+            <p class="section__text__p1">Explore My</p>
+            <h1 class="title">Experience</h1>
+            <div class="experience-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <h2 class="experience-sub-title">Frontend Development</h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>HTML</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>CSS</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>JavaScript</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="details-container">
+                        <h2 class="experience-sub-title">Backend Development</h2>
+                        <div class="article-container">
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>Python</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>Java</h3>
+                                    <p>Experienced</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>MySQL</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                            <article>
+                                <img src="./assets/checkmark.png" alt="Experience icon" class="icon">
+                                <div>
+                                    <h3>Git</h3>
+                                    <p>Basic</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS SECTION ==================== -->
+        <section id="projects">
+            <p class="section__text__p1">Browse My Recent</p>
+            <h1 class="title">Projects</h1>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3 class="project-title">IIT-Connect Application</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        A platform for university students and staff to connect, share events, and chat.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Real Estate Web Application</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Vite</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JSON</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Enables users to seamlessly search, view, and manage real estate listings.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Personal Portfolio</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Web application to showcase my skills and projects
+                        with modern responsive design.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Life on Land Website</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        Designed team and feedback pages for an environmental awareness website.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Clothing Platform</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <p class="project-description">
+                        A responsive clothing web application designed to showcase stylish apparel.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Personal Finance Tracker</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">OOP</span>
+                    </div>
+                    <p class="project-description">
+                        Web application for tracking income/expenses with
+                        dashboard summaries and categorized transactions.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Traffic Flow Analysis System</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        Program analyzing CSV traffic data, generating insights,
+                        and visualizations using histograms.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">XYZ Construction Information System</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        System to monitor project progress,
+                        track resource allocation, and optimize workflow.
+                    </p>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Percolation Simulation</h3>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <p class="project-description">
+                        Simulation tool generating random grids to
+                        test water flow and output results to text files.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact">
+            <p class="section__text__p1">Get in Touch</p>
+            <h1 class="title">Contact Me</h1>
+            <div class="contact-section">
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <input type="submit" value="Send Message" class="submit-btn">
+                </form>
+            </div>
+        </section>
+
     </div>
 
     <footer>
@@ -79,4 +319,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
