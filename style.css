@@ -1,5 +1,9 @@
+/* ============================================
+   MODERN PORTFOLIO DESIGN
+   ============================================ */
+
 /* GENERAL & BASE STYLES */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 /* Universal selector - resets margin, padding, and sets box-sizing for all elements */
 * {
@@ -13,10 +17,12 @@ html, body {
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #fafbfc;
+    color: #1a1a2e;
 }
 
 html {
@@ -24,61 +30,93 @@ html {
 }
 
 p {
-    color: rgb(85, 85, 85);
+    color: #64748b;
+    line-height: 1.7;
 }
 
-/* TRANSITION to smoothly change css*/
+/* TRANSITION to smoothly change css */
 a,
 .btn {
     transition: all 300ms ease;
 }
 
-/* DESKTOP NAV */
+/* ============================================
+   DESKTOP NAV - Glassmorphism Style
+   ============================================ */
 nav,
 .nav-links {
-    display: flex; /*manage alignment and spacing*/
+    display: flex; /* manage alignment and spacing */
 }
 
-/* Main navigation bar styling*/
+/* Main navigation bar styling */
 nav {
     justify-content: space-around;
     align-items: center;
-    height: 17vh;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 999;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
 /* Navigation links list styling */
 .nav-links {
-    gap: 2rem; /* Space between navigation items */
-    list-style: none; /* Remove bullet points */
-    font-size: 1.5rem;
+    gap: 2.5rem;
+    list-style: none;
+    font-size: 0.95rem;
+    font-weight: 500;
     padding: 0;
     margin: 0;
 }
 
 /* Default link styling */
 a {
-    color: black;
+    color: #475569;
     text-decoration: none;
-    text-decoration-color: white;
 }
 
 /* Link hover effect */
 a:hover {
-    color: grey;
-    text-decoration: underline;
-    text-underline-offset: 1rem; /* Space between text and underline */
-    text-decoration-color: rgb(181, 181, 181);
+    color: #667eea;
+    text-decoration: none;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* Modern underline hover effect for nav links */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 /* Change cursor to default when hovering logo (not clickable) */
@@ -86,7 +124,9 @@ a:hover {
     cursor: default;
 }
 
-/* HAMBURGER MENU */
+/* ============================================
+   HAMBURGER MENU
+   ============================================ */
 #hamburger-nav {
     display: none;
 }
@@ -100,8 +140,8 @@ a:hover {
 /* Hamburger icon - three horizontal lines */
 .hamburger-icon {
     display: flex;
-    flex-direction: column; /*controls whether items flow row or col*/
-    justify-content: space-between; /*defines how items are spaced*/
+    flex-direction: column;
+    justify-content: space-between;
     height: 24px;
     width: 30px;
     cursor: pointer;
@@ -110,8 +150,9 @@ a:hover {
 .hamburger-icon span {
     width: 100%;
     height: 2px;
-    background-color: black;
-    transition: all 0.3s ease-in-out; /* Smooth animation when opening */
+    background-color: #1a1a2e;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
 /* Mobile menu links container - hidden by default */
@@ -119,24 +160,31 @@ a:hover {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
     width: fit-content;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Mobile menu link styling */
 .menu-links a {
     display: block;
-    padding: 10px;
+    padding: 12px 24px;
     text-align: center;
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1rem;
+    color: #475569;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
+}
+
+.menu-links a:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
 }
 
 /* Remove bullet points from mobile menu items */
@@ -151,7 +199,7 @@ a:hover {
 
 /* Transforms first line of hamburger into X (top part) */
 .hamburger-icon.open span:first-child {
-    transform: rotate(45deg) translate(5px, 5px); /*changes shape or position*/
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 /* Hides middle line of hamburger when open */
@@ -164,96 +212,190 @@ a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Main content wrapper*/
+/* ============================================
+   MAIN CONTENT & SECTIONS
+   ============================================ */
 .main-content {
     flex: 1;
     width: 100%;
 }
 
-/* SECTIONS */
 section {
-    margin: 0 10rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 6rem 2rem;
     box-sizing: border-box;
     min-height: auto;
-    padding-bottom: 5rem;
-    padding-top: 20vh;
 }
 
 .section-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Profile section with gradient background */
+.about-details-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.text-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Section subtitle styling */
+.section__text__p1 {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #667eea;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 2.75rem;
+    text-align: center;
+    font-weight: 800;
+    color: #1a1a2e;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+/* PSEUDO ELEMENT - gradient underline below section title */
+.title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ============================================
+   PROFILE / HERO SECTION
+   ============================================ */
 #profile {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    min-height: 80vh;
+    min-height: 100vh;
     align-items: center;
-    /*Gradient to smooth transititon between colors */
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    margin: 0;
+    max-width: 100%;
+    padding: 0 10rem;
+    padding-top: 80px; /* nav height */
+    background: linear-gradient(135deg, #f5f7ff 0%, #f0e6ff 50%, #fafbfc 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle animated background circles */
+#profile::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+#profile::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+    bottom: -50px;
+    left: -50px;
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
 /* Profile picture container */
 .section__pic-container {
     display: flex;
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     margin: auto 0;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
 }
 
 .section__text {
     align-self: center;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .section__text p {
     font-weight: 600;
 }
 
-.section__text__p1 {
-    text-align: center;
-}
-
 .section__text__p2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #64748b;
+    font-weight: 400;
 }
 
-.title {
-    font-size: 3rem;
-    text-align: center;
+/* Profile title override - bigger for hero */
+#profile .title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
-/* PSEUDO ELEMENT to style specific parts without changing structure*/
-.title::after {
-    /* Adds a colored underline graphic below the main section title */
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #667eea;
-    margin: 10px auto;
+#profile .title::after {
+    display: none;
 }
 
+/* ============================================
+   SOCIAL ICONS
+   ============================================ */
 #socials-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     gap: 1rem;
 }
 
 .icon {
     cursor: pointer;
     height: 2rem;
+    transition: all 0.3s ease;
+    opacity: 0.7;
 }
 
-/* Icons (Negation Pseudo Class to select elements that doesnt match certain selector) */
+/* Icons hover effect */
 .icon:not(.arrow):hover {
-    transform: scale(1.1);/* Scale effect on hover for all icons*/
+    transform: scale(1.15) translateY(-2px);
+    opacity: 1;
 }
 
-/* Button container - centers buttons with spacing */
+/* ============================================
+   BUTTONS - Modern Gradient Style
+   ============================================ */
 .btn-container {
     display: flex;
     justify-content: center;
@@ -262,114 +404,170 @@ section {
 
 .btn {
     font-weight: 600;
+    font-family: "Inter", sans-serif;
     transition: all 300ms ease;
-    padding: 1rem;
-    width: 8rem;
-    border-radius: 2rem;
+    padding: 0.85rem 1.8rem;
+    width: auto;
+    min-width: 150px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
 }
 
 .btn-color-1,
 .btn-color-2 {
-    border: rgb(53, 53, 53) 0.1rem solid;
-}
-
-/* Pointer cursor on button hover */
-.btn-color-1:hover,
-.btn-color-2:hover {
-    cursor: pointer;
+    border: 2px solid transparent;
 }
 
 .btn-color-1 {
-    background: rgb(53, 53, 53);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .btn-color-1:hover {
-    background: rgb(0, 0, 0);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
 .btn-color-2 {
-    background: none;
+    background: white;
+    color: #1a1a2e;
+    border: 2px solid #e2e8f0;
 }
 
 .btn-color-2:hover {
-    background: rgb(53, 53, 53);
-    color: white;
-    border: rgb(255, 255, 255) 0.1rem solid;
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/*About section*/
-/* Styling for the individual boxes */
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
 .details-container {
-    padding: 1.5rem;
-    flex: 1; /* Allows boxes to stretch horizontally within their parent */
+    padding: 2rem;
+    flex: 1;
     background: white;
-    border: 0.1rem solid rgb(163, 163, 163);
-    border-radius: 1rem; /* Rounded corners for the box */
+    border: 1px solid #e8ecf2;
+    border-radius: 1.25rem;
     text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-/* Styling for the container that holds the boxes */
-.about-containers { 
-    display: flex; /* Arranges boxes horizontally */
+.details-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.about-containers {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
-/* SKILL BOX STYLES */
+.text-container p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   SKILL BOX STYLES
+   ============================================ */
 .skill-box {
     transition: all 0.3s ease;
     padding: 2rem 1.5rem;
+    min-width: 250px;
+    flex: 1 1 250px;
+    max-width: 350px;
+    background: white;
+    border: 1px solid #e8ecf2;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient top border for skill boxes */
+.skill-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-box:hover::before {
+    opacity: 1;
 }
 
 .skill-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-color: #667eea;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.12);
+    border-color: rgba(102, 126, 234, 0.15);
 }
 
 .skill-box-icon {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.experience-sub-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
 }
 
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
     justify-content: center;
     margin-top: 1rem;
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
-    color: rgb(53, 53, 53);
-    padding: 0.5rem 1.2rem;
-    border-radius: 2rem;
-    font-size: 0.9rem;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.82rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    border: 1px solid transparent;
+    border: 1px solid #e2e8f0;
 }
 
 .skill-tag:hover {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
-    transform: scale(1.05);
+    transform: translateY(-2px);
     border-color: transparent;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
-
+/* ============================================
+   BLOG SECTION
+   ============================================ */
 #blog {
     position: relative;
     min-height: auto;
     padding-bottom: 3rem;
 }
 
-/* Grid layout for blog posts */
 .blog-posts-container {
     display: grid;
     gap: 2rem;
@@ -378,8 +576,8 @@ section {
 
 .blog-post {
     background: white;
-    border: 0.1rem solid rgb(163, 163, 163);
-    border-radius: 1rem;
+    border: 1px solid #e8ecf2;
+    border-radius: 1.25rem;
     padding: 2rem;
     transition: all 0.3s ease;
 }
@@ -390,208 +588,246 @@ section {
 }
 
 .blog-post:hover {
-    transform: translateY(-5px);/* Moves card up slightly */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);/* Adds shadow for depth */
-    border-color: rgb(53, 53, 53);/* Darkens border */
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(102, 126, 234, 0.2);
 }
 
 .read-more {
-    color: rgb(53, 53, 53);
+    color: #667eea;
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
     margin-top: 1rem;
 }
 
-/* PROJECTS SECTION*/
-/* Structure selectors to style based on position*/
+/* ============================================
+   PROJECTS SECTION
+   ============================================ */
+/* Alternate card backgrounds */
 .project-card:nth-child(odd) {
-    background-color: #f8f9fa;/* Light gray for odd cards */
+    background: linear-gradient(135deg, #fafbfc, #f5f7ff);
 }
 
 .projects-container {
     display: grid;
-    /* Arranges cards, keeping a min width of 350px for each */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 .project-card {
     background: white;
-    border: 0.1rem solid rgb(163, 163, 163); 
-    border-radius: 1rem;
+    border: 1px solid #e8ecf2;
+    border-radius: 1.25rem;
     padding: 2rem;
-    
-    /* Layout */
     display: flex;
     flex-direction: column;
-    height: 100%; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    
-    /* fade in animations on page load*/
-    animation: fadeInUp 0.6s ease-out; 
+    height: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    animation: fadeInUp 0.6s ease-out;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Transforms and adds shadow */
+/* Gradient accent line on top of project cards */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
 .project-card:hover {
-    transform: translateY(-5px); /* Subtle lift on hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-color: rgb(53, 53, 53);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(102, 126, 234, 0.15);
 }
 
-/* Styling for the tech tags inside the box */
+.project-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 0.75rem;
+}
+
 .project-tech {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap; /*allow items to wrap into multiple lines*/
-    justify-content: center;
-    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
 .tech-tag {
-    background: rgb(240, 240, 240);
-    color: rgb(85, 85, 85);
-    padding: 0.3rem 0.8rem;
-    border-radius: 1rem;/* Rounded pill shape */
-    font-size: 0.8rem;
-    font-weight: 500;
+    background: linear-gradient(135deg, #f0f2ff, #f5f0ff);
+    color: #667eea;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    transition: all 0.3s ease;
 }
 
-/* Fade-in from bottom animation for project cards for complex movements */
+.tech-tag:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: transparent;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Fade-in from bottom animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);/* Starts 30px below */
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);/* Ends at normal position */
+        transform: translateY(0);
     }
 }
 
-.project-card {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* CONTACT SECTION */
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
 #contact {
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 70vh;
-    padding-top: 20vh;
+    min-height: 60vh;
+    padding-top: 6rem;
 }
 
-/* Contact Form container */
 .contact-section {
-    max-width: 500px;
+    max-width: 550px;
     width: 90%;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-/* Contact form styling */
 .contact-section form {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 0.1rem solid rgb(163, 163, 163);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #e8ecf2;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* Form label styling */
 .contact-section label {
-    font-weight: 500;
-    color: rgb(53, 53, 53);
-    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    font-size: 0.9rem;
 }
 
 /* Relational Selector - adds spacing between label and input */
 label + input,
 label + textarea {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
 }
 
-/* Attribute Selectors - to target elements of specific attri */
+/* Attribute Selectors */
 input[type="text"],
 input[type="email"] {
-    border: 2px solid #ddd;
+    border: 2px solid #e8ecf2;
 }
 
-/* Red left border for required fields */
+/* Accent left border for required fields */
 input[required] {
-    border-left: 3px solid #ff6b6b;
+    border-left: 3px solid #667eea;
 }
 
 /* General input and textarea styling */
 .contact-section input,
 .contact-section textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 0.1rem solid rgb(163, 163, 163);
-    border-radius: 0.5rem;
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+    padding: 0.85rem 1rem;
+    border: 2px solid #e8ecf2;
+    border-radius: 0.75rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: #fafbfc;
+    color: #1a1a2e;
 }
 
-/* Validity Pseudo Class to style based on user interacts */
+/* Validity Pseudo Class */
 input:valid {
     border-color: #51cf66;
 }
 
-/* Red border for invalid inputs (when filled out) */
+/* Red border for invalid */
 input:invalid:not(:placeholder-shown):not(:focus) {
     border-color: #ff6b6b;
 }
 
-/* Focus state for inputs - dark border */
+/* Focus state */
 .contact-section input:focus,
 .contact-section textarea:focus {
     outline: none;
-    border-color: rgb(53, 53, 53);
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 .contact-section textarea {
-    resize: vertical;/* Allows vertical resizing only */
-    min-height: 120px;
+    resize: vertical;
+    min-height: 130px;
 }
 
 .submit-btn {
-    background: rgb(53, 53, 53);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border: none;
     padding: 1rem 2rem;
-    border-radius: 2rem;
+    border-radius: 50px;
     font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
     cursor: pointer;
     transition: all 300ms ease;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 /* Keyframe animation - pulse effect for button */
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }/* Normal size */
-    50% { transform: scale(1.02); }/* Slightly larger */
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }
 
-/* Submit button hover - black background with pulse animation */
 .submit-btn:hover {
-    background: rgb(0, 0, 0);
-    animation: pulse 1s infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
 }
 
-/* FOOTER*/
+/* ============================================
+   FOOTER - Modern Gradient
+   ============================================ */
 footer {
-    /* Gradient from dark grey to medium grey*/
-    background: linear-gradient(90deg, #495057 0%, #6c757d 100%);
-    padding: 1.5rem 2rem;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 2rem;
     text-align: center;
     margin-top: auto;
     width: 100%;
@@ -599,11 +835,29 @@ footer {
 
 footer p {
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
     margin: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
 }
 
-/* RESPONSIVE DESIGN - MOBILE BREAKPOINT (768px and below) */
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - 768px and below
+   ============================================ */
 @media screen and (max-width: 768px) {
     /* Mobile Navigation */
     #desktop-nav {
@@ -614,42 +868,37 @@ footer p {
         display: flex;
     }
 
-    /* Reduce section margins for mobile - uses specificity to override */
+    /* Reduce section padding */
     section {
-        margin: 0 1rem; 
-        padding-top: 15vh;
-        padding-bottom: 3rem;
+        padding: 4rem 1.25rem;
     }
 
     .title {
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
-    /* Profile Section vertically */
+    /* Profile Section */
     #profile {
         flex-direction: column;
         min-height: auto;
         gap: 2rem;
-        padding-bottom: 3rem;
-        padding-top: 20vh;
+        padding: 6rem 1.5rem 3rem;
     }
-    .profile-pic { 
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Prevents stretching */
-        border-radius: 50%;
+
+    #profile .title {
+        font-size: 2.5rem;
     }
 
     .section__pic-container {
-        height: 300px;
-        width: 300px;
+        height: 280px;
+        width: 280px;
     }
 
     .section__text__p2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
-    /* About & Experience vertically */
+    /* About & Experience */
     .section-container {
         flex-direction: column;
         gap: 2rem;
@@ -658,7 +907,11 @@ footer p {
 
     .about-containers {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.25rem;
+    }
+
+    .skill-box {
+        max-width: 100%;
     }
 
     .experience-details-container {
@@ -681,7 +934,7 @@ footer p {
         margin-bottom: 2rem;
     }
 
-    /* Contact Section Mobile Adjustments */
+    /* Contact Mobile */
     .contact-info-upper-container {
         flex-direction: column;
         padding: 1rem;
@@ -690,7 +943,7 @@ footer p {
     /* Project Card in single column */
     .projects-container {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .project-card {
@@ -699,5 +952,11 @@ footer p {
 
     .project-btn {
         width: 150px;
+    }
+
+    .btn {
+        min-width: 130px;
+        padding: 0.75rem 1.4rem;
+        font-size: 0.85rem;
     }
 }
