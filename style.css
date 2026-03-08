@@ -309,15 +309,60 @@ section {
     text-align: center;
 }
 
-/* Styling for the container that holds the two boxes side-by-side */
+/* Styling for the container that holds the boxes */
 .about-containers { 
     display: flex; /* Arranges boxes horizontally */
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
 
-/* BLOG SECTION*/
+/* SKILL BOX STYLES */
+.skill-box {
+    transition: all 0.3s ease;
+    padding: 2rem 1.5rem;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.skill-box-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+    color: rgb(53, 53, 53);
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: scale(1.05);
+    border-color: transparent;
+}
+
+
 #blog {
     position: relative;
     min-height: auto;
