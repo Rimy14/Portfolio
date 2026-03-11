@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks.forEach(link => {
             link.style.color = "";
             if (link.getAttribute("href") === `#${current}`) {
-                link.style.color = "#667eea";
+                link.style.color = "#10b981";
             }
         });
     });

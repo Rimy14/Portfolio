@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    MODERN PORTFOLIO DESIGN
    ============================================ */
 
@@ -83,7 +83,7 @@ a {
 
 /* Link hover effect */
 a:hover {
-    color: #667eea;
+    color: #10b981;
     text-decoration: none;
 }
 
@@ -100,7 +100,7 @@ a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     transition: width 0.3s ease;
     border-radius: 2px;
 }
@@ -112,7 +112,7 @@ a:hover {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,8 +183,8 @@ a:hover {
 }
 
 .menu-links a:hover {
-    color: #667eea;
-    background: rgba(102, 126, 234, 0.05);
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
 }
 
 /* Remove bullet points from mobile menu items */
@@ -249,7 +249,7 @@ section {
     text-align: center;
     font-size: 0.95rem;
     font-weight: 500;
-    color: #667eea;
+    color: #10b981;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
@@ -270,7 +270,7 @@ section {
     display: block;
     width: 60px;
     height: 4px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     margin: 12px auto 0;
     border-radius: 2px;
 }
@@ -288,7 +288,7 @@ section {
     max-width: 100%;
     padding: 0 10rem;
     padding-top: 80px; /* nav height */
-    background: linear-gradient(135deg, #f5f7ff 0%, #f0e6ff 50%, #fafbfc 100%);
+    background: linear-gradient(135deg, #f0fdf4 0%, #f0e6ff 50%, #fafbfc 100%);
     position: relative;
     overflow: hidden;
 }
@@ -299,7 +299,7 @@ section {
     position: absolute;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(102, 126, 234, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
     top: -100px;
     right: -100px;
     border-radius: 50%;
@@ -311,7 +311,7 @@ section {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(5, 150, 105, 0.08) 0%, transparent 70%);
     bottom: -50px;
     left: -50px;
     border-radius: 50%;
@@ -339,7 +339,7 @@ section {
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid white;
-    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+    box-shadow: 0 20px 60px rgba(16, 185, 129, 0.2);
 }
 
 .section__text {
@@ -421,15 +421,15 @@ section {
 }
 
 .btn-color-1 {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
     border: none;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 .btn-color-1:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
 }
 
 .btn-color-2 {
@@ -439,8 +439,8 @@ section {
 }
 
 .btn-color-2:hover {
-    border-color: #667eea;
-    color: #667eea;
+    border-color: #10b981;
+    color: #10b981;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
@@ -462,7 +462,7 @@ section {
 .details-container:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-color: rgba(102, 126, 234, 0.2);
+    border-color: rgba(16, 185, 129, 0.2);
 }
 
 .about-containers {
@@ -505,7 +505,7 @@ section {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -516,8 +516,8 @@ section {
 
 .skill-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.12);
-    border-color: rgba(102, 126, 234, 0.15);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.15);
 }
 
 .skill-box-icon {
@@ -552,11 +552,11 @@ section {
 }
 
 .skill-tag:hover {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
     transform: translateY(-2px);
     border-color: transparent;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* ============================================
@@ -584,17 +584,17 @@ section {
 
 /* Pseudo Element for content */
 .blog-post h2::before {
-    content: "📝 ";
+    content: "ðŸ“ ";
 }
 
 .blog-post:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-    border-color: rgba(102, 126, 234, 0.2);
+    border-color: rgba(16, 185, 129, 0.2);
 }
 
 .read-more {
-    color: #667eea;
+    color: #10b981;
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
@@ -606,7 +606,7 @@ section {
    ============================================ */
 /* Alternate card backgrounds */
 .project-card:nth-child(odd) {
-    background: linear-gradient(135deg, #fafbfc, #f5f7ff);
+    background: linear-gradient(135deg, #fafbfc, #f0fdf4);
 }
 
 .projects-container {
@@ -639,7 +639,7 @@ section {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     transform: scaleX(0);
     transition: transform 0.3s ease;
     transform-origin: left;
@@ -652,7 +652,7 @@ section {
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: rgba(102, 126, 234, 0.15);
+    border-color: rgba(16, 185, 129, 0.15);
 }
 
 .project-title {
@@ -670,18 +670,18 @@ section {
 }
 
 .tech-tag {
-    background: linear-gradient(135deg, #f0f2ff, #f5f0ff);
-    color: #667eea;
+    background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+    color: #10b981;
     padding: 0.3rem 0.75rem;
     border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 600;
-    border: 1px solid rgba(102, 126, 234, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.15);
     transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
     border-color: transparent;
 }
@@ -696,7 +696,7 @@ section {
 .github-link {
     display: inline-block;
     margin-top: 1rem;
-    color: #667eea;
+    color: #10b981;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
@@ -706,8 +706,8 @@ section {
 }
 
 .github-link:hover {
-    color: #764ba2;
-    border-bottom-color: #764ba2;
+    color: #059669;
+    border-bottom-color: #059669;
     text-decoration: none;
 }
 
@@ -774,7 +774,7 @@ input[type="email"] {
 
 /* Accent left border for required fields */
 input[required] {
-    border-left: 3px solid #667eea;
+    border-left: 3px solid #10b981;
 }
 
 /* General input and textarea styling */
@@ -805,9 +805,9 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 .contact-section input:focus,
 .contact-section textarea:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #10b981;
     background: white;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
 }
 
 .contact-section textarea {
@@ -816,7 +816,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #10b981, #059669);
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -827,7 +827,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
     cursor: pointer;
     transition: all 300ms ease;
     margin-top: 0.5rem;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
 }
 
 /* Keyframe animation - pulse effect for button */
@@ -838,7 +838,7 @@ input:invalid:not(:placeholder-shown):not(:focus) {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
 }
 
 /* ============================================
