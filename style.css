@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    MODERN PORTFOLIO DESIGN
    ============================================ */
 
@@ -393,6 +393,12 @@ section {
     opacity: 1;
 }
 
+.email-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #1a1a2e;
+}
+
 /* ============================================
    BUTTONS - Modern Gradient Style
    ============================================ */
@@ -604,9 +610,9 @@ section {
 /* ============================================
    PROJECTS SECTION
    ============================================ */
-/* Alternate card backgrounds */
+/* All cards use same clean background */
 .project-card:nth-child(odd) {
-    background: linear-gradient(135deg, #fafbfc, #f0fdf4);
+    background: white;
 }
 
 .projects-container {
