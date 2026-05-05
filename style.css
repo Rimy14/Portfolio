@@ -740,11 +740,143 @@ section {
     padding-top: 6rem;
 }
 
+/* Two-column wrapper for contact info + form */
+.contact-wrapper {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2.5rem;
+    align-items: stretch;
+}
+
+/* ---- Contact Info Panel (Left Side) ---- */
+.contact-info-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #64748b;
+}
+
+/* Individual info card (Email, Location) */
+.contact-info-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: 1px solid #e8ecf2;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.contact-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-radius: 0.75rem;
+    color: #10b981;
+}
+
+.contact-info-text h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.2rem;
+}
+
+.contact-info-text a {
+    font-size: 0.9rem;
+    color: #10b981;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-text a:hover {
+    color: #059669;
+}
+
+.contact-info-text p {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* ---- Social Links Section ---- */
+.contact-social-links {
+    margin-top: 0.5rem;
+}
+
+.contact-social-links h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.75rem;
+}
+
+.contact-socials {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.contact-social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: white;
+    border: 1px solid #e8ecf2;
+    border-radius: 50px;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-social-btn svg {
+    transition: all 0.3s ease;
+}
+
+.contact-social-btn:hover {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+    text-decoration: none;
+}
+
+.contact-social-btn:hover svg {
+    fill: white;
+}
+
+/* ---- Contact Form (Right Side) ---- */
 .contact-section {
-    max-width: 550px;
-    width: 90%;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    flex: 1;
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-section form {
@@ -757,6 +889,7 @@ section {
     border-radius: 1.5rem;
     border: 1px solid #e8ecf2;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    height: 100%;
 }
 
 /* Form label styling */
@@ -960,6 +1093,19 @@ footer p {
     }
 
     /* Contact Mobile */
+    .contact-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-info-panel {
+        gap: 1rem;
+    }
+
+    .contact-socials {
+        flex-wrap: wrap;
+    }
+
     .contact-info-upper-container {
         flex-direction: column;
         padding: 1rem;
