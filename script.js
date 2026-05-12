@@ -68,4 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTopBtn.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    // Dynamic copyright year
+    document.getElementById("copyright-year").textContent = new Date().getFullYear();
 });
