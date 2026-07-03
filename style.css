@@ -168,7 +168,7 @@ a:hover {
     transition: all 0.3s ease-in-out;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid transparent;
 }
 
 /* Mobile menu link styling */
@@ -195,6 +195,7 @@ a:hover {
 /* Expands menu when open class is added */
 .menu-links.open {
     max-height: 300px;
+    border-color: rgba(0, 0, 0, 0.06);
 }
 
 /* Transforms first line of hamburger into X (top part) */
