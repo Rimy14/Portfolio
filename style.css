@@ -1106,8 +1106,13 @@ footer p {
         gap: 1.25rem;
     }
 
+    .about-containers .details-container {
+        flex: 1 1 auto;
+    }
+
     .skill-box {
         max-width: 100%;
+        flex: 1 1 auto;
     }
 
     .experience-details-container {
